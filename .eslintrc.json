@@ -1,0 +1,20 @@
+{
+    "root": true,
+    "plugins": ["@typescript-eslint", "solid", "simple-import-sort"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": true,
+        "tsconfigRootDir": "."
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:solid/typescript",
+        "plugin:prettier/recommended"
+    ],
+    "rules": {
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
+    }
+}

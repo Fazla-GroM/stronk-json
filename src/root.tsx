@@ -4,6 +4,7 @@ import './fancy-ui-core/styles/theme.css' //@TODO: find a way to handle this
 import { Suspense } from 'solid-js'
 import { A, Body, ErrorBoundary, FileRoutes, Head, Html, Meta, Routes, Scripts, Title } from 'solid-start'
 
+import { BaseLayout } from './BaseLayout'
 import { ThemeProvider, ThemeSSRScript } from './fancy-ui-solid'
 
 export default function Root() {
@@ -19,11 +20,13 @@ export default function Root() {
                 <Suspense>
                     <ErrorBoundary>
                         <ThemeProvider initialMode="system" storageKey="stronk_json_theme">
-                            <A href="/">Index</A>
-                            <A href="/about">About</A>
-                            <Routes>
-                                <FileRoutes />
-                            </Routes>
+                            <BaseLayout>
+                                <A href="/">Index</A>
+                                <A href="/about">About</A>
+                                <Routes>
+                                    <FileRoutes />
+                                </Routes>
+                            </BaseLayout>
                         </ThemeProvider>
                     </ErrorBoundary>
                 </Suspense>

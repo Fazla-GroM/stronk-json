@@ -1,20 +1,19 @@
 import { DARK_THEME_VALUE, LIGHT_THEME_VALUE, THEME_ATTR_NAME } from '../consts'
-import type { TThemeProviderInitialMode } from '../ThemeProvider'
 
-type TSSRScriptParams = {
+type TSSRScriptOptions = {
     storageKey: string
-    initialMode?: TThemeProviderInitialMode
+    initialMode: 'light' | 'dark' | 'system'
 }
 
-const localStorageScript = ({ storageKey, initialMode = 'system' }: TSSRScriptParams) => {
+const localStorageScript = (options: TSSRScriptOptions) => {
     return `(function () {
         try {
-            var themeMode = JSON.parse(localStorage.getItem("${storageKey}"))
+            var themeMode = JSON.parse(localStorage.getItem("${options.storageKey}"))
             var resolvedTheme
 
             if (!themeMode) {
-                themeMode = "${initialMode}"
-                localStorage.setItem("${storageKey}", JSON.stringify(themeMode))
+                themeMode = "${options.initialMode}"
+                localStorage.setItem("${options.storageKey}", JSON.stringify(themeMode))
             }
             
             if (themeMode === 'system') {
@@ -30,8 +29,8 @@ const localStorageScript = ({ storageKey, initialMode = 'system' }: TSSRScriptPa
     })()`
 }
 
-const ssrScript = (params: TSSRScriptParams) => {
-    return localStorageScript(params)
+const ssrScript = (options: TSSRScriptOptions) => {
+    return localStorageScript(options)
 }
 
 export { ssrScript }

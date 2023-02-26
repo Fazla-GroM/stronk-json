@@ -1,4 +1,4 @@
-export * from './disableCssTransition'
+export * from './disableCSSTransition'
 export * from './extractSprinklesProps'
 export * from './makeSprinklesVariantProps'
 export * from './mergeClassNames'

@@ -1,6 +1,6 @@
 import { DISABLE_CSS_TRANSITION } from '../consts'
 
-const disableTransition = () => {
+const disableCSSTransition = () => {
     const documentNode = document
     const styleNode = documentNode.createElement('style')
     const textNode = documentNode.createTextNode(DISABLE_CSS_TRANSITION)
@@ -22,4 +22,4 @@ const disableTransition = () => {
     }
 }
 
-export { disableTransition }
+export { disableCSSTransition }

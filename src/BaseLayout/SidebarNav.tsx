@@ -35,11 +35,11 @@ const SidebarNav = () => {
             <SidebarNavLink href="/">
                 <CodeViewIcon size="md" />
             </SidebarNavLink>
-            <SidebarNavLink href="/graph">
-                <GraphViewIcon size="md" />
-            </SidebarNavLink>
             <SidebarNavLink href="/column">
                 <ColumnViewIcon size="md" />
+            </SidebarNavLink>
+            <SidebarNavLink href="/graph">
+                <GraphViewIcon size="md" />
             </SidebarNavLink>
             <SidebarNavLink href="/tree">
                 <TreeViewIcon size="md" />

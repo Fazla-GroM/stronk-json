@@ -13,11 +13,9 @@ const ColumnList: TColumnList = props => {
             height="full"
             overflowX="auto"
             overflowY="hidden"
-            style={{
-                display: 'grid',
-                'grid-auto-flow': 'column',
-                'grid-auto-columns': '320px'
-            }}
+            display="grid"
+            gridAutoFlow="column"
+            gridAutoColumns="max-content"
         >
             {props.children}
         </Box>

@@ -165,6 +165,9 @@ const responsiveProperties = defineProperties({
             first: '-9999',
             last: '9999'
         },
+        gridAutoFlow: ['row', 'column', 'dense'],
+        gridAutoRows: ['auto', 'min-content', 'max-content'],
+        gridAutoColumns: ['auto', 'min-content', 'max-content'],
         paddingTop: { ...themeVars.spaces, none: '0px' },
         paddingBottom: { ...themeVars.spaces, none: '0px' },
         paddingLeft: { ...themeVars.spaces, none: '0px' },

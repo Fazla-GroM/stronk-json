@@ -1,15 +1,25 @@
+import { Accessor } from 'solid-js'
 import { createContext, createEffect, mergeProps, ParentComponent, useContext } from 'solid-js'
 
 import { disableCSSTransition, THEME_ATTR_NAME } from '~/fancy-ui-core'
-import { TColorMode, TUseColorModeReturnType, useColorMode } from '~/solid-hooks'
+import { TColorMode, TResolvedColorMode, useColorMode } from '~/solid-hooks'
 
 import { MakeRequired } from '../types'
 
-type TThemeContext = TUseColorModeReturnType
+export type TThemeColorMode = TColorMode
+
+export type TThemeResolvedColorMode = TResolvedColorMode
+
+export type TThemeContext = {
+    colorMode: Accessor<TThemeColorMode>
+    resolvedColorMode: Accessor<TThemeResolvedColorMode>
+    isDark: Accessor<boolean>
+    toggleColorMode: (themeMode?: TThemeColorMode) => void
+}
 
 type TThemeProviderProps = {
     storageKey: string
-    initialMode?: TColorMode
+    initialMode?: TThemeColorMode
 }
 
 type TThemeProvider = ParentComponent<TThemeProviderProps>

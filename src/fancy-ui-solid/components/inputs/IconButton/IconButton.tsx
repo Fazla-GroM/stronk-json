@@ -34,4 +34,4 @@ const IconButton: TIconButton = props => {
     return <Box as="button" {...elementProps} {...iconButtonStyleProps(styleProps)} {...sprinklesProps} />
 }
 
-export { IconButton }
+export { IconButton, iconButtonStyleProps }

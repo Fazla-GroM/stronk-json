@@ -2,7 +2,7 @@ import { ParentComponent } from 'solid-js'
 import { A, useMatch } from 'solid-start'
 
 import { Box, iconButtonStyleProps } from '~/fancy-ui-solid'
-import { ColumnViewIcon, GraphViewIcon, TreeViewIcon } from '~/Icons'
+import { CodeViewIcon, ColumnViewIcon, GraphViewIcon, TreeViewIcon } from '~/Icons'
 
 type TSidebarNavLinkProps = {
     href: string
@@ -33,6 +33,9 @@ const SidebarNav = () => {
     return (
         <Box as="nav" display="flex" flexDirection="column" alignItems="center" gap="xs">
             <SidebarNavLink href="/">
+                <CodeViewIcon size="md" />
+            </SidebarNavLink>
+            <SidebarNavLink href="/graph">
                 <GraphViewIcon size="md" />
             </SidebarNavLink>
             <SidebarNavLink href="/column">

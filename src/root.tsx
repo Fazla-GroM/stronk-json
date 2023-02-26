@@ -21,8 +21,6 @@ export default function Root() {
                     <ErrorBoundary>
                         <ThemeProvider initialMode="system" storageKey="stronk_json_theme">
                             <BaseLayout>
-                                <A href="/">Index</A>
-                                <A href="/about">About</A>
                                 <Routes>
                                     <FileRoutes />
                                 </Routes>

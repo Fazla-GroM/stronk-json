@@ -1,8 +1,10 @@
 // @refresh reload
-import './root.css'
+import './fancy-ui-core/styles/theme.css' //@TODO: find a way to handle this
 
 import { Suspense } from 'solid-js'
 import { A, Body, ErrorBoundary, FileRoutes, Head, Html, Meta, Routes, Scripts, Title } from 'solid-start'
+
+import { ThemeProvider, ThemeSSRScript } from './fancy-ui-solid'
 
 export default function Root() {
     return (
@@ -11,15 +13,18 @@ export default function Root() {
                 <Title>SolidStart - Bare</Title>
                 <Meta charset="utf-8" />
                 <Meta name="viewport" content="width=device-width, initial-scale=1" />
+                <ThemeSSRScript initialMode="system" storageKey="stronk_json_theme" />
             </Head>
             <Body>
                 <Suspense>
                     <ErrorBoundary>
-                        <A href="/">Index</A>
-                        <A href="/about">About</A>
-                        <Routes>
-                            <FileRoutes />
-                        </Routes>
+                        <ThemeProvider initialMode="system" storageKey="stronk_json_theme">
+                            <A href="/">Index</A>
+                            <A href="/about">About</A>
+                            <Routes>
+                                <FileRoutes />
+                            </Routes>
+                        </ThemeProvider>
                     </ErrorBoundary>
                 </Suspense>
                 <Scripts />

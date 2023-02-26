@@ -8,23 +8,23 @@ type TSSRScriptOptions = {
 const localStorageScript = (options: TSSRScriptOptions) => {
     return `(function () {
         try {
-            var themeMode = JSON.parse(localStorage.getItem("${options.storageKey}"))
-            var resolvedTheme
+            var themeMode = localStorage.getItem("${options.storageKey}");
+            var resolvedTheme;
 
             if (!themeMode) {
-                themeMode = "${options.initialMode}"
-                localStorage.setItem("${options.storageKey}", JSON.stringify(themeMode))
+                themeMode = "${options.initialMode}";
+                localStorage.setItem("${options.storageKey}",themeMode);
             }
             
             if (themeMode === 'system') {
-                const mql = window.matchMedia('(prefers-color-scheme: dark)')
-                resolvedTheme = mql.matches ? "${DARK_THEME_VALUE}" : "${LIGHT_THEME_VALUE}"
+                const mql = window.matchMedia('(prefers-color-scheme: dark)');
+                resolvedTheme = mql.matches ? "${DARK_THEME_VALUE}" : "${LIGHT_THEME_VALUE}";
             } else {
-                resolvedTheme = themeMode
+                resolvedTheme = themeMode;
             }
-            document.documentElement.setAttribute("${THEME_ATTR_NAME}", resolvedTheme)
+            document.documentElement.setAttribute("${THEME_ATTR_NAME}", resolvedTheme);
         } catch (e) {
-            console.warn('[Defungo-SSRThemeScript]:', e)
+            console.warn('[FancyUI-SSRThemeScript]:', e);
         }
     })()`
 }

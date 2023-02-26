@@ -37,8 +37,6 @@ const ThemeProvider: TThemeProvider = props => {
         const enableCssTransition = disableCSSTransition()
         const documentElement = document.documentElement
 
-        console.log(themeContext.resolvedColorMode())
-
         documentElement.setAttribute(THEME_ATTR_NAME, themeContext.resolvedColorMode())
 
         enableCssTransition()

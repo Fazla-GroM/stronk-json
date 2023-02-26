@@ -113,7 +113,9 @@ const themeVars = createGlobalThemeContract({
             xl2: 'fonts-size-xl2',
             xl3: 'fonts-size-xl3',
             xl4: 'fonts-size-xl4',
-            xl5: 'fonts-size-xl5'
+            xl5: 'fonts-size-xl5',
+            xl6: 'fonts-size-xl6',
+            xl7: 'fonts-size-xl7'
         },
         weight: {
             regular: 'fonts-weight-regular',

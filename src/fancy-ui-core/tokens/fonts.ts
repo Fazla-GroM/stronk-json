@@ -14,10 +14,11 @@ const fontSize = {
     lg: '1.125rem', //18px
     xl: '1.25rem', //20px
     xl2: '1.5rem', //24px
-    xl3: '1.875rem', //30px
-    xl4: '2.25rem', //36px
-    xl5: '3rem' //48px
-    // xl5: '2.5rem', //40px
+    xl3: '1.75rem', //28px //28 1.75
+    xl4: '2rem', //32px  //32 2
+    xl5: '2.5rem', //40px      //40 2.5
+    xl6: '3rem', //48px 3
+    xl7: '3.5rem' //56 3.5
 }
 
 const fontWeight = {

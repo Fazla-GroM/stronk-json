@@ -1,7 +1,28 @@
 import { createSignal, Match, onMount, Switch } from 'solid-js'
 
-import { Box, IconButton, useTheme } from '~/fancy-ui-solid'
-import { DarkThemeIcon, LightThemeIcon, SystemThemeIcon } from '~/Icons'
+import { Box, IconButton, Typography, useTheme } from '~/fancy-ui-solid'
+import { DarkThemeIcon, LightThemeIcon, ObjectIcon, SystemThemeIcon } from '~/Icons'
+
+const Logo = () => {
+    return (
+        <Box display="flex" alignItems="center" userSelect="none">
+            <Box color="brand11" width="xl7" height="full" display="flex" alignItems="center" justifyContent="center">
+                <ObjectIcon size="lg" />
+            </Box>
+            <Typography as="h1" level="h4">
+                Stronk JSON
+            </Typography>
+        </Box>
+        // <Box display="flex" alignItems="center" gap="xs" userSelect="none">
+        //     <Box color="brand11" width="xl5" height="xl5" display="flex" alignItems="center" justifyContent="center">
+        //         <ObjectIcon size="lg" />
+        //     </Box>
+        //     <Typography as="h1" level="h4">
+        //         Stronk JSON
+        //     </Typography>
+        // </Box>
+    )
+}
 
 const ToggleThemeButton = () => {
     const [mounted, setMounted] = createSignal(false)
@@ -31,18 +52,20 @@ const ToggleThemeButton = () => {
 const Header = () => {
     return (
         <Box
+            as="header"
             backgroundColor="surface"
             height="xl7"
             width="full"
             flexShrink="0"
             display="flex"
             alignItems="center"
-            justifyContent="flex-end"
-            paddingX="xl"
+            justifyContent="space-between"
+            paddingRight="xl"
             borderBottomColor="divider"
             borderBottomStyle="solid"
             borderBottomWidth="sm"
         >
+            <Logo />
             <ToggleThemeButton />
         </Box>
     )

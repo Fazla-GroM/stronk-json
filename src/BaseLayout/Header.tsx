@@ -13,14 +13,6 @@ const Logo = () => {
                 Stronk JSON
             </Typography>
         </Box>
-        // <Box display="flex" alignItems="center" gap="xs" userSelect="none">
-        //     <Box color="brand11" width="xl5" height="xl5" display="flex" alignItems="center" justifyContent="center">
-        //         <ObjectIcon size="lg" />
-        //     </Box>
-        //     <Typography as="h1" level="h4">
-        //         Stronk JSON
-        //     </Typography>
-        // </Box>
     )
 }
 

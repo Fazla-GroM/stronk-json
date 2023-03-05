@@ -37,7 +37,7 @@ function Typography<T extends TElementType = 'p'>(props: TTypographyProps<T>) {
     )
 
     return (
-        <Box as={localProps.as} {...typographyStyleProps(styleProps)} {...sprinklesProps} {...restProps}>
+        <Box as={localProps.as} {...typographyStyleProps(styleProps, sprinklesProps.sprinkles)} {...restProps}>
             {defaultProps.children}
         </Box>
     )

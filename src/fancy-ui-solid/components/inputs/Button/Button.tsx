@@ -31,7 +31,7 @@ const Button: TButton = props => {
 
     const [styleProps, sprinklesProps, elementProps] = splitProps(defaultProps, STYLE_PROPS_KEYS, SPRINKLES_PROPS_KEY)
 
-    return <Box as="button" {...elementProps} {...buttonStyleProps(styleProps)} {...sprinklesProps} />
+    return <Box as="button" {...elementProps} {...buttonStyleProps(styleProps, sprinklesProps.sprinkles)} />
 }
 
 export { Button }

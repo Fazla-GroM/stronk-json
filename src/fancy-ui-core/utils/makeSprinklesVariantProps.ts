@@ -21,7 +21,10 @@ type TVariantStylePattern<T extends TVariantStyleGroup> = {
     compoundVariants?: Array<TCompoundVariant<T>>
 }
 
-type TLookupFn<T extends TVariantStyleGroup> = (variantSelections?: TVariantSelection<T>) => TSprinkles
+type TLookupFn<T extends TVariantStyleGroup> = (
+    variantSelections?: TVariantSelection<T>,
+    sprinklesOverride?: TSprinkles
+) => TSprinkles
 
 export type TLookupVariants<T extends TLookupFn<TVariantStyleGroup>> = Parameters<T>[0]
 
@@ -30,7 +33,7 @@ const makeSprinklesVariantProps = <T extends TVariantStyleGroup>({
     variants,
     compoundVariants
 }: TVariantStylePattern<T>): TLookupFn<T> => {
-    return variantSelections => {
+    return (variantSelections, sprinklesOverride) => {
         let resolvedSprinklesProps: TSprinkles = base || {}
 
         if (variantSelections) {
@@ -63,6 +66,13 @@ const makeSprinklesVariantProps = <T extends TVariantStyleGroup>({
                         }
                     }
                 })
+            }
+        }
+
+        if (sprinklesOverride) {
+            resolvedSprinklesProps = {
+                ...resolvedSprinklesProps,
+                ...sprinklesOverride
             }
         }
 

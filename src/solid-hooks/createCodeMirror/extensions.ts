@@ -26,7 +26,7 @@ import {
 } from '@codemirror/view'
 import { tags as t } from '@lezer/highlight'
 
-import { themeVars } from '~/fancy-ui-core'
+import { themeVars } from '~/fancy-ui-solid'
 
 const stronkJsonHighlightStyle = HighlightStyle.define([
     { tag: t.keyword, color: themeVars.colors.info[11] },

@@ -1,5 +1,6 @@
-import { Box, IconButton } from '~/fancy-ui-solid'
-import { DownloadFileIcon, UploadFileIcon } from '~/Icons'
+import { Box } from '~/fancy-ui-solid'
+import { DownloadJSONButton } from '~/features/DownloadJSONButton'
+import { UploadJSONButton } from '~/features/UploadJSONButton'
 
 const SidebarAdditionalActions = () => {
     return (
@@ -13,12 +14,8 @@ const SidebarAdditionalActions = () => {
             borderTopStyle="solid"
             borderTopWidth="sm"
         >
-            <IconButton size="md" variant="plain" color="neutral">
-                <UploadFileIcon size="md" />
-            </IconButton>
-            <IconButton size="md" variant="plain" color="neutral">
-                <DownloadFileIcon size="md" />
-            </IconButton>
+            <UploadJSONButton />
+            <DownloadJSONButton />
         </Box>
     )
 }

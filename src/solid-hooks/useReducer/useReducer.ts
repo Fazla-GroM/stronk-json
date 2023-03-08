@@ -1,10 +1,10 @@
 import { createStore, reconcile } from 'solid-js/store'
 
-type TReducerState = Record<string, any>
+export type TReducerState = Record<string, any>
 
-type TReducerAction = any
+export type TReducerAction = any
 
-type TReducer<S extends TReducerState, A extends TReducerAction> = (state: S, action: A) => S
+export type TReducer<S extends TReducerState, A extends TReducerAction> = (state: S, action: A) => S
 
 const useReducer = <S extends TReducerState, T extends TReducerAction>(reducer: TReducer<S, T>, state: S) => {
     const [store, setStore] = createStore(state)

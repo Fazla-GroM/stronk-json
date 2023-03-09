@@ -1,0 +1,3 @@
+const DialogOpenButton = () => {
+    return <button />
+}

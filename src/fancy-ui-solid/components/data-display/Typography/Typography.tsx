@@ -1,21 +1,14 @@
-import { Component, ComponentProps, JSX, mergeProps, splitProps } from 'solid-js'
+import { JSX, mergeProps, splitProps } from 'solid-js'
 
-import { TSprinkles, TTypographyStyleProps, typographyStyleProps } from '~/fancy-ui-core'
-import { MakeRequired } from '~/fancy-ui-solid/types'
+import { TTypographyStyleProps, typographyStyleProps } from '~/fancy-ui-core'
+import { MakeRequired, TComponentPropsWithOverrideAndSprinkles, TElementType } from '~/fancy-ui-solid/types'
 
 import { Box } from '../../surfaces'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type TElementType = keyof JSX.IntrinsicElements | Component<any>
-
-type TTypographyBoxProps<T extends TElementType> = TTypographyStyleProps & {
+type TTypographyProps<T extends TElementType> = TComponentPropsWithOverrideAndSprinkles<T, TTypographyStyleProps> & {
     as?: T
-    sprinkles?: TSprinkles
     children?: JSX.Element
 }
-
-type TTypographyProps<T extends TElementType> = Omit<ComponentProps<T>, keyof TTypographyBoxProps<T>> &
-    TTypographyBoxProps<T>
 
 const LOCAL_PROPS_KEYS = ['as'] as const
 

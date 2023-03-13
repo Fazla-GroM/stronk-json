@@ -172,10 +172,10 @@ const responsiveProperties = defineProperties({
         paddingBottom: { ...themeVars.spaces, none: '0px' },
         paddingLeft: { ...themeVars.spaces, none: '0px' },
         paddingRight: { ...themeVars.spaces, none: '0px' },
-        marginTop: { ...themeVars.spaces, none: '0px' },
-        marginRight: { ...themeVars.spaces, none: '0px' },
-        marginBottom: { ...themeVars.spaces, none: '0px' },
-        marginLeft: { ...themeVars.spaces, none: '0px' },
+        marginTop: { ...themeVars.spaces, none: '0px', auto: 'auto' },
+        marginRight: { ...themeVars.spaces, none: '0px', auto: 'auto' },
+        marginBottom: { ...themeVars.spaces, none: '0px', auto: 'auto' },
+        marginLeft: { ...themeVars.spaces, none: '0px', auto: 'auto' },
         width: { ...themeVars.sizes, full: '100%', fit: 'fit-content', em: '1em' },
         minWidth: { ...themeVars.sizes, full: '100%' },
         maxWidth: { ...themeVars.sizes, full: '100%' },
@@ -227,6 +227,7 @@ const responsiveProperties = defineProperties({
 const staticProperties = defineProperties({
     properties: {
         fill: ['currentColor'],
+        zIndex: themeVars.zIndices,
         fontFamily: themeVars.fonts.family,
         transitionTimingFunction: themeVars.transitions.timing,
         transitionDuration: themeVars.transitions.duration,

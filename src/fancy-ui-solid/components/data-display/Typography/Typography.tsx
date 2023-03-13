@@ -21,11 +21,11 @@ const LOCAL_PROPS_KEYS = ['as'] as const
 
 const SPRINKLES_PROPS_KEY = ['sprinkles'] as const
 
-const TYPOGRAPHY_PROPS_KEYS = ['level', 'color'] as const
+const TYPOGRAPHY_PROPS_KEYS = ['variant', 'color'] as const
 
 function Typography<T extends TElementType = 'p'>(props: TTypographyProps<T>) {
     const defaultProps = mergeProps(
-        { as: 'p', level: 'body1', color: 'neutralHighContrast' } as MakeRequired<TTypographyProps<T>, 'as'>,
+        { as: 'p', variant: 'body1', color: 'neutralHighContrast' } as MakeRequired<TTypographyProps<T>, 'as'>,
         props
     )
 

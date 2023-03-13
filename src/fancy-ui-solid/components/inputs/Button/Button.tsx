@@ -1,14 +1,11 @@
-import { Component, ComponentProps, mergeProps, splitProps } from 'solid-js'
+import { Component, mergeProps, splitProps } from 'solid-js'
 
-import { buttonStyleProps, TButtonStyleProps, TSprinkles } from '~/fancy-ui-core'
-import type { MakeRequired } from '~/fancy-ui-solid/types'
+import { buttonStyleProps, TButtonStyleProps } from '~/fancy-ui-core'
+import type { MakeRequired, TComponentPropsWithOverrideAndSprinkles } from '~/fancy-ui-solid/types'
 
 import { Box } from '../../surfaces'
 
-export type TButtonProps = Omit<ComponentProps<'button'>, 'color'> &
-    TButtonStyleProps & {
-        sprinkles?: TSprinkles
-    }
+export type TButtonProps = TComponentPropsWithOverrideAndSprinkles<'button', TButtonStyleProps>
 
 export type TButton = Component<TButtonProps>
 

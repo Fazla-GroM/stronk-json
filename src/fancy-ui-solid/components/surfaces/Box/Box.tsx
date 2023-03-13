@@ -1,12 +1,9 @@
-import { Component, ComponentProps, JSX, mergeProps, splitProps } from 'solid-js'
+import { JSX, mergeProps, splitProps } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 
 import type { TSprinkles } from '~/fancy-ui-core'
 import { mergeClassNames, sprinkles } from '~/fancy-ui-core'
-import type { MakeRequired } from '~/fancy-ui-solid/types'
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type TElementType = keyof JSX.IntrinsicElements | Component<any>
+import type { MakeRequired, TComponentPropsWithOverride, TElementType } from '~/fancy-ui-solid/types'
 
 export type TSprinklesBoxProps<T extends TElementType> = TSprinkles & {
     class?: string
@@ -15,8 +12,7 @@ export type TSprinklesBoxProps<T extends TElementType> = TSprinkles & {
     children?: JSX.Element
 }
 
-export type TBoxProps<T extends TElementType> = Omit<ComponentProps<T>, keyof TSprinklesBoxProps<T>> &
-    TSprinklesBoxProps<T>
+type TBoxProps<T extends TElementType> = TComponentPropsWithOverride<T, TSprinklesBoxProps<T>>
 
 const SPRINKLES_PROPS_KEYS = Array.from(sprinkles.properties)
 

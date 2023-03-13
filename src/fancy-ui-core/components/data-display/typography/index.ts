@@ -45,7 +45,7 @@ const typographyStyleProps = makeSprinklesVariantProps({
                 color: 'info11'
             }
         },
-        level: {
+        variant: {
             h1: {
                 fontFamily: 'heading',
                 fontSize: 'xl5',

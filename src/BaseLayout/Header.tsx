@@ -9,7 +9,7 @@ const Logo = () => {
             <Box color="brand11" width="xl7" height="full" display="flex" alignItems="center" justifyContent="center">
                 <ObjectIcon size="lg" />
             </Box>
-            <Typography as="h1" level="h4">
+            <Typography as="h1" variant="h4">
                 Stronk JSON
             </Typography>
         </Box>
